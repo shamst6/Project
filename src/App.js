@@ -1,24 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
-
+import Card from './component/Card';
+import NavBar from './component/NavBar';
+import SubmissionForm from './component/SubmissionForm';
+import Home from './Pages/Home';
+import ContactUs from './Pages/ContactUs';
+import Saved from './Pages/Saved';
+import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <Router>
+     <div>
+       <NavBar />
+       <Route path={'./Home'} element={<Home/>} />
+       <Route path={'./Saved'} element={<Saved/>} />
+       <Route path={'./ContactUs'} element={<ContactUs/>} />
+     </div>
+   </Router>
   );
 }
 
